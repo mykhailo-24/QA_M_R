@@ -1,0 +1,15 @@
+.header {
+    padding: 40px;
+  background: red;
+  color: #000;
+}
+
+.header ul{
+  display   : flex;
+  justify-content: center;
+  gap: 40px;
+}
+.header {
+   color: #000;
+    text-decoration: none;
+}
