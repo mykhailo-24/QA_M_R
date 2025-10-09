@@ -1,7 +1,11 @@
-create table car_brands
-(
-    id    int auto_increment
-        primary key,
-    title varchar(50) not null
-);
+﻿CREATE DATABASE qaAuto;
 
+USE qaAuto;
+
+CREATE TABLE car_brands (
+
+    id INT PRIMARY KEY AUTO_INCREMENT,
+
+    title VARCHAR(50) NOT NULL
+
+);
