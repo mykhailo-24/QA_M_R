@@ -1,0 +1,886 @@
+{
+	"info": {
+		"_postman_id": "c0bafca7-fe9e-4fe6-9ec8-f26624e9860b",
+		"name": "QA Auto Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48463577",
+		"_collection_link": "https://mykhailo24st.postman.co/workspace/%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE-%D0%A5%D1%80%D0%B8%D1%81%D1%82%D0%B5%D0%BD%D0%BA%D0%BE's-Workspace~caef681e-1f92-4dce-843d-a131166bd86c/collection/48463577-c0bafca7-fe9e-4fe6-9ec8-f26624e9860b?action=share&source=collection_link&creator=48463577"
+	},
+	"item": [
+		{
+			"name": "https://qauto2.forstudy.space/api/auth/signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Signup success\", function () {",
+							"    pm.expect(pm.response.code).to.eql(201);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Mer\",\"lastName\":\"Hjjd\",\"email\":\"mikhail2493+34@ukr.net\",\"password\":\"Test2445\",\"repeatPassword\":\"Test2445\"}"
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/auth/signup",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/auth/signin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.collectionVariables.set(\"authToken\", json.data.access_token);\r",
+							"pm.test(\"Token received\", () => pm.expect(json.data).to.have.property(\"access_token\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"mikhail2493+34@ukr.net\",\"password\":\"Test2445\",\"remember\":false}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/auth/signin",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"auth",
+						"signin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/users/profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.test(\"Profile updated\", () => pm.expect(json.data.firstName).to.eql(\"Mishanya\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/panel/profile"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=s%3AJAyxjyEZ3c7ibmsotyXHi0l5AaqNcKeZ.DrxvemgD5O2TOgLGGB4MEbYsaPcYe0RtMGihbZlg4tk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Mer\",\"lastName\":\"Hjjd\",\"country\":null,\"dateBirth\":null,\"photo\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/users/profile",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"users",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/users/settings",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.test(\"Distance updated\", () => pm.expect(json.data.distanceUnits).to.eql(\"ml\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/panel/settings"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=s%3AJAyxjyEZ3c7ibmsotyXHi0l5AaqNcKeZ.DrxvemgD5O2TOgLGGB4MEbYsaPcYe0RtMGihbZlg4tk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"distanceUnits\":\"ml\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/users/settings",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"users",
+						"settings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/cars",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.collectionVariables.set(\"carId\", json.data.id);\r",
+							"pm.test(\"Car added\", () => pm.expect(json.data).to.have.property(\"id\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/panel/garage"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=s%3AJAyxjyEZ3c7ibmsotyXHi0l5AaqNcKeZ.DrxvemgD5O2TOgLGGB4MEbYsaPcYe0RtMGihbZlg4tk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"carBrandId\":4,\"carModelId\":18,\"mileage\":12}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/cars/195672",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.test(\"Mileage updated\", () => pm.expect(json.data.mileage).to.eql(500));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/panel/garage"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=s%3AJAyxjyEZ3c7ibmsotyXHi0l5AaqNcKeZ.DrxvemgD5O2TOgLGGB4MEbYsaPcYe0RtMGihbZlg4tk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"carBrandId\":4,\"carModelId\":18,\"carCreatedAt\":\"2025-09-26T00:00:00.000Z\",\"mileage\":197}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/cars/195672",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"cars",
+						"195672"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://qauto2.forstudy.space/api/expenses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const json = pm.response.json();\r",
+							"pm.test(\"Expense added\", () => pm.expect(json.data).to.have.property(\"id\"));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "ru-UA,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,ru-RU;q=0.6,en-US;q=0.5,en;q=0.4"
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic Z3Vlc3Q6d2VsY29tZTJxYXV0bw=="
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Origin",
+						"value": "https://qauto2.forstudy.space"
+					},
+					{
+						"key": "Referer",
+						"value": "https://qauto2.forstudy.space/panel/expenses?carId=195672"
+					},
+					{
+						"key": "Sec-Fetch-Dest",
+						"value": "empty"
+					},
+					{
+						"key": "Sec-Fetch-Mode",
+						"value": "cors"
+					},
+					{
+						"key": "Sec-Fetch-Site",
+						"value": "same-origin"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": "\"Chromium\";v=\"140\", \"Not=A?Brand\";v=\"24\", \"Google Chrome\";v=\"140\""
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": "?0"
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": "\"Windows\""
+					},
+					{
+						"key": "Cookie",
+						"value": "sid=s%3AJAyxjyEZ3c7ibmsotyXHi0l5AaqNcKeZ.DrxvemgD5O2TOgLGGB4MEbYsaPcYe0RtMGihbZlg4tk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"carId\":195672,\"reportedAt\":\"2025-09-26T00:00:00.000Z\",\"mileage\":201,\"liters\":34,\"totalCost\":45}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qauto2.forstudy.space/api/expenses",
+					"protocol": "https",
+					"host": [
+						"qauto2",
+						"forstudy",
+						"space"
+					],
+					"path": [
+						"api",
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/cars/{{carId}} Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Car deleted\", () => pm.expect(pm.response.code).to.eql(200));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars/{{carId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						"{{carId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{baseUrl}}/cars/{{carId}} Copy 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Car deleted\", () => pm.expect(pm.response.code).to.eql(200));\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/cars/{{carId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"cars",
+						"{{carId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": ""
+		},
+		{
+			"key": "carId",
+			"value": ""
+		}
+	]
+}
