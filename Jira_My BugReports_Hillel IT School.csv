@@ -1,0 +1,235 @@
+Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project description,Project url,Priority,Resolution,Assignee,Reporter,Creator,Created,Updated,Last Viewed,Resolved,Due Date,Votes,Labels,Labels,Description,Environment,Watchers,Original Estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Attachment,Attachment,Custom field (Baseline end date),Custom field (Baseline start date),Custom field (Bug type),Custom field (Component),Custom field (Component),Custom field (End date),Custom field (Epic Color),Custom field (Epic Link),Custom field (Epic Name),Custom field (Epic Status),Custom field (Estimate),Custom field (External issue ID),Custom field (Original story points),Custom field (Parent Link),Custom field (Program Increment),Custom field (Rank),Custom field (Risk consequence),Custom field (Risk probability),Custom field (Role),Custom field (Severity),Custom field (Spent Time),Sprint,Custom field (Start date),Custom field (Story Points),Custom field (Target end),Custom field (Target start),Custom field (Task mode),Custom field (Task progress),Custom field (Team),Custom field (Test Case),Custom field (Zephyr Teststep),Custom field (gitCommitsReferenced),Custom field (Ім'я викладача),Custom field (Напрямок),Custom field (Посилання на профіль викладача в ТТ),Custom field (Сума виплат),Comment
+[Mykhailo] Error displaying the “Remove account” block,U1QM020625-145,128217,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Medium,,mikhail2493,mikhail2493,mikhail2493,04/Aug/25 8:13 PM,11/Aug/25 8:10 PM,21/Oct/25 11:42 AM,,,0,,,"*Precondition:*
+
+Open [Link|https://qauto2.forstudy.space/panel/garage]. User is logged in. 
+
+*StR:*
+ #  Click on [Settings]. 
+ #  Scroll down to the ""Remove account"" section
+
+*Actual result:*
+
+The “Delete account” block is 10 pixels wide, and the text is broken up.
+
+*Expected result:*
+
+The “Delete account” block should be 810 pixels wide.
+
+ ",,mikhail2493,,,,,,,,,"05/Aug/25 10:47 AM;mikhail2493;remove account 2.0.png;https://jira.ithillel.com/secure/attachment/83294/remove+account+2.0.png","05/Aug/25 10:46 AM;mikhail2493;remove account.png;https://jira.ithillel.com/secure/attachment/83293/remove+account.png",,,,,,,,,,,,,,,,"0|i0i3g4:",,,,,,Доска Sprint 13,,,,,,,,,,,,,,,"11/Aug/25 8:10 PM;mikhail2493;[~alinaeichas] ;;;"
+Incorrect result when searching for car instructions.,U1QM020625-160,128385,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,07/Aug/25 9:17 PM,11/Aug/25 8:10 PM,21/Aug/25 7:15 PM,,,0,,,"*Precondition:*
+ # Open [Link|https://qauto2.forstudy.space/panel/garage]. User is logged in. 
+ # Click [Instructions].
+
+*StR:*
+ # Click on ""Car brand selector"". 
+ # Click ""BMW"".
+ #  Click on ""Car model selector"".
+ #  Click on ""3"".
+ # Add miles.
+ # Click [Search].
+
+*Actual result:*
+ # A list of cars has appeared.
+ #  The selection is recorded in the car brand selection field.
+ # A list of car brands has appeared.
+ #  The selection is recorded.
+ #  Miles added.
+ # +One instruction manual for AUDI was found, and many for BMW.+
+
+!Ауді.png|width=254,height=123!
+
+ 
+
+*Expected result:*
+
++The system found instructions exclusively for the car specified in the search.+
+
+ 
+
+ ",,mikhail2493,,,,,,,,,"07/Aug/25 9:14 PM;mikhail2493;Ауді.png;https://jira.ithillel.com/secure/attachment/83433/%D0%90%D1%83%D0%B4%D1%96.png",,,,,,,,,,,,,,,,,"0|i0i0lz:z",,,,,,Доска Sprint 13,,,,,,,,,,,,,,,"11/Aug/25 8:10 PM;mikhail2493;[~alinaeichas] ;;;"
+"[Mykhailo] Button ""About""",U1QM020625-150,128223,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Highest,,mikhail2493,mikhail2493,mikhail2493,05/Aug/25 12:11 PM,11/Aug/25 8:08 PM,05/Oct/25 10:09 PM,,,0,,,"*Precondition:*
+
+Open [Link|https://qauto2.forstudy.space/panel/garage]. User is logged in. 
+
+*StR:*
+
+1. Click  [About]
+
+*Actual result:*
+
+For registered users, the [about] button is not available.
+
+!About 2.png|width=272,height=104!
+
+*Expected result:*
+
+The button is located in the application, as shown in the project documentation.
+
+!about.png|width=427,height=128!",,mikhail2493,,,,,,,,,"05/Aug/25 12:10 PM;mikhail2493;About 2.png;https://jira.ithillel.com/secure/attachment/83295/About+2.png","05/Aug/25 12:10 PM;mikhail2493;about.png;https://jira.ithillel.com/secure/attachment/83296/about.png",,,,,,,,,,,,,,,,"0|i0i3g8:",,,,,,Доска Sprint 13,,,,,,,,,,,,,,,
+"the ""Roll"" button is not blocked when pressed repeatedly",U1QM020625-23,127729,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,18/Jul/25 9:12 AM,05/Aug/25 10:48 AM,21/Oct/25 11:44 AM,,,0,,,"Preconditions :
+
+1.click [here|https://craps.students.hillel.it/]
+
+2.input valid name for 1-st and 2-nd players
+
+StR:
+
+1.Click [Start game]
+
+2.Click the [Roll] batton multiple times.
+
+[^r.mp4]
+
+AcR :
+
+New numbers are formed and written in the field of each player
+
+ExR :
+
+After pressing the “Roll” button, it is locked while the dice are rolling.
+
+Postconditions:
+
+1.Click [End game]
+
+2.Click [Yes, reset the game].",,mikhail2493,,,,,,,,,"18/Jul/25 9:17 AM;mikhail2493;r.mp4;https://jira.ithillel.com/secure/attachment/82903/r.mp4",,,,,,,,,,,,,,,,,"0|i0i0m1:",,,,,,,,,,,,,,,,,,,,,
+The “Date of expire” field does not put a “/” between the month and year.,U1QM020625-33,127769,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 2:57 PM,19/Jul/25 2:57 PM,29/Jul/25 12:27 PM,,,0,,,"*Precondition* :
+
+1.Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+
+2.Click [Donate]
+
+{*}StR{*}:
+ #  Enter the 4 numbers in field input  data of expire.
+
+ 
+
+{*}AcR{*}:
+ # The system does not insert the “/” symbol between the year and month, which causes an error and requires manual entry of this symbol.
+
+       !jj.png|width=215,height=239!
+
+     
+
+*ExR* :
+
+The system automatically inserts the “/” symbol after the month number has been entered.",,mikhail2493,,,,,,,,,"19/Jul/25 2:50 PM;mikhail2493;jj.png;https://jira.ithillel.com/secure/attachment/82931/jj.png",,,,,,,,,,,,,,,,,"0|i0i158:",,,,,,,,,,,,,,,,,,,,,
+Numeric fields do not block letter input,U1QM020625-32,127768,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 2:32 PM,19/Jul/25 2:32 PM,21/Oct/25 11:44 AM,,,0,,,"*Precondition* :
+
+1.Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+
+2.Click [Donate]
+
+{*}StR{*}:
+ #  Enter the letters in the card's numerical data (card number, data od expire, CVV).
+
+ 
+
+{*}AcR{*}:
+ # The system accepts letters entered in numeric fields and displays a message stating that the field must contain a “certain” number of digits.
+
+ 
+
+   !78.png|width=175,height=204!   !ffffffff-2.jpg|width=281,height=211!
+
+     
+
+*ExR* :
+ # The system blocks the entry of letters in numeric fields.",,mikhail2493,,,,,,,,,"19/Jul/25 2:21 PM;mikhail2493;78.png;https://jira.ithillel.com/secure/attachment/82929/78.png","19/Jul/25 1:58 PM;mikhail2493;ffffffff-2.jpg;https://jira.ithillel.com/secure/attachment/82930/ffffffff-2.jpg",,,,,,,,,,,,,,,,"0|i0i150:",,,,,,,,,,,,,,,,,,,,,
+The system accepts donations when the card balance is zero.,U1QM020625-31,127767,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,High,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 1:49 PM,19/Jul/25 2:17 PM,30/Jul/25 9:56 AM,,,0,,,"h4. Precondition
+ # Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+ # Open the menu with cards.
+ # The card whose details are to be entered must have a zero balance.
+**
+
+ 
+
+*StR:* 
+ # Click [Donate] in the left corner .
+ # Enter valid cardholder name, card number, card expiration date, CVV code, amount.   
+ # Check the box in the Agree team service window and Click the “Confirm payment” button 
+
+*AcR:*
+ # The “Donate” tab opens.
+ # The system accepted the data.
+ # System show pop-up ""Thamk you"".  System show on card balance ""-100"".
+
+!12.jpg|width=245,height=173!      !13-1.jpg|width=295,height=174!
+h4.  
+h4. ExR:
+ # The “Donate” tab opens.
+ # The system accepted the data.
+ # A pop-up window appears with the message “Transaction failed, try again”.",,mikhail2493,,,,,,,,,"19/Jul/25 1:43 PM;mikhail2493;12.jpg;https://jira.ithillel.com/secure/attachment/82928/12.jpg","19/Jul/25 1:45 PM;mikhail2493;13-1.jpg;https://jira.ithillel.com/secure/attachment/82927/13-1.jpg",,,,,,,,,,,,,,,,"0|i0i14s:",,,,,,,,,,,,,,,,,,,,,
+"In the “name” field, the system accepts Cyrillic characters as valid data.",U1QM020625-30,127766,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 12:49 PM,19/Jul/25 12:49 PM,21/Oct/25 11:44 AM,,,0,,,"Precondition :
+
+1.Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+
+2.Click [Account]
+
+3.Click [+] in the left corner of the app.
+
+StR:
+ # Enter a word in Cyrillic in the “name” field, for example, “Pharmacy”(Аптека).
+ #  In the “Last name” field, enter your last name using valid characters(for exemple : DE).
+ # Click [Create a virtual card].    
+
+AcR:
+ # The system accepts Cyrillic characters as valid data..
+ # The system accepted the letters as valid data.
+ # The card was created.
+
+!какакакакакакака.jpg|width=367,height=236!
+
+ExR :
+ #  System show massage ""Input valid data"".
+ # The system has accepted the entered data.
+ #  The “create virtual card” button remains inactive.",,mikhail2493,,,,,,,,,"19/Jul/25 12:44 PM;mikhail2493;какакакакакакака.jpg;https://jira.ithillel.com/secure/attachment/82926/%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0%D0%BA%D0%B0.jpg",,,,,,,,,,,,,,,,,"0|i0i14k:",,,,,,,,,,,,,,,,,,,,,
+ Enter digit and period  in the “name” field,U1QM020625-28,127764,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 11:58 AM,19/Jul/25 12:40 PM,21/Oct/25 11:44 AM,,,0,HelpCatsapp.10.3.M.,,"Precondition :
+
+1.Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+
+2.Click [Account]
+
+3.Click [+] in the left corner of the app.
+
+StR:
+ # Enter one digit and one period  in the “name” field.
+ #  In the “Last name” field, enter your last name using valid characters(for exemple : Show).
+ # Click [Create a virtual card].    
+
+AcR:
+ # The symbols “1” and “.” were accepted by the system as valid.
+ # The system accepted the letters as valid data.
+ # The card was created.
+
+!котики.jpg|width=283,height=187!
+
+ExR :
+ #  System show massage ""Input valid data"".
+ # The system has accepted the entered data.
+ #  The “create virtual card” button remains inactive..",,mikhail2493,,,,,,,,,"19/Jul/25 12:18 PM;mikhail2493;котики.jpg;https://jira.ithillel.com/secure/attachment/82924/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B8.jpg",,,,,,,,,,,,,,,,,"0|i0i144:",,,,,,,,,,,,,,,,,,,,,
+Enter one number and one letter in the “name” field.,U1QM020625-29,127765,Bug,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Low,,mikhail2493,mikhail2493,mikhail2493,19/Jul/25 12:39 PM,19/Jul/25 12:39 PM,21/Oct/25 11:44 AM,,,0,,,"Precondition :
+
+1.Open app  [HelpCatsapp.10.3.M|https://kitties.students.hillel.it/].
+
+2.Click [Account]
+
+3.Click [+] in the left corner of the app.
+
+StR:
+ # Enter one number and one english letter in the “name” field.
+ #  In the “Last name” field, enter your last name using valid characters(for exemple : Show).
+ # Click [Create a virtual card].    
+
+AcR:
+ # One digit and one english letter in the “name” field were accepted by the system as valid data for the “name” field.
+ # The system accepted the letters as valid data.
+ # The card was created.
+
+!котики2.jpg!
+
+ExR :
+ #  System show massage ""Input valid data"".
+ # The system has accepted the entered data.
+ #  The “create virtual card” button remains inactive..",,mikhail2493,,,,,,,,,"19/Jul/25 12:34 PM;mikhail2493;котики2.jpg;https://jira.ithillel.com/secure/attachment/82925/%D0%BA%D0%BE%D1%82%D0%B8%D0%BA%D0%B82.jpg",,,,,,,,,,,,,,,,,"0|i0i14c:",,,,,,,,,,,,,,,,,,,,,
+Перевірити поле  логіну,U1QM020625-9,127714,Test,To Do,U1QM020625,QA Manual (02.06.2025),software,alinaeichas,,,Highest,,mikhail2493,mikhail2493,mikhail2493,17/Jul/25 8:01 PM,17/Jul/25 8:02 PM,05/Oct/25 10:09 PM,,,0,check,Check,"Перейти на лінк """"""""""""",,mikhail2493,,,,,,,,,,,,,,,,,,,,,,,,,,"0|i0i0m0:",,,,,,,,,,,,,,,,,,,,,
